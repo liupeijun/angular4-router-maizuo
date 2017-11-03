@@ -1,0 +1,17 @@
+nav{
+	position:fixed;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:50px;
+	background:#282828;
+	color:white;
+	line-height:50px;
+	.left{
+		float:left;
+	}
+
+	.right{
+		float:right;
+	}
+}

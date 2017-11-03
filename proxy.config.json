@@ -1,0 +1,7 @@
+ {
+          "/v4/api": {
+              "target": "http://m.maizuo.com",
+              "host": "m.maizuo.com",
+              "changeOrigin":true
+          }
+}

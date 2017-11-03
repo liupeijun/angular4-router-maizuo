@@ -1,0 +1,14 @@
+<div>
+	<ul>
+		<li *ngFor="let data of datalist;let index= index"
+		[routerLink]="['/detail',data.id]"
+		>
+		<!-- 通过routerLink 跳转页面 并传参数 ，以上匹配的路由是/detial/1243 -->
+			<img [src]="data.poster.origin"/>
+			<div>
+				<h3>{{data.name}}</h3>
+				<p>{{data.intro}}</p>
+			</div>
+		</li>
+	</ul>
+</div>

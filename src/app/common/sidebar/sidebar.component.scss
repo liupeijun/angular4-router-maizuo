@@ -1,0 +1,19 @@
+aside{
+	position:fixed;
+	width:50%;
+	height:100%;
+	left:0px;
+	top:50px;
+	z-index:2;
+	color:white;
+	background:#282828;
+	ul{
+		li{
+			padding:10px;
+		}
+	}
+}
+
+.active{
+	background:#fe6e00;
+}

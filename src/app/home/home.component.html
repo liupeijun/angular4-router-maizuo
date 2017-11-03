@@ -1,0 +1,21 @@
+<div>
+
+  <swiper [config]="config">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let data of looplist">
+              <img [src]="data.imageUrl" />
+            </div>
+            <!-- Add Pagination -->
+            
+        </div>
+        <div class="swiper-pagination"></div>
+   	</swiper>
+
+    <ul>
+      <li *ngFor="let data of datalist">
+        <img [src]="data.cover.origin">
+        <h3>{{data.name}}</h3>
+        <p>{{data.intro}}</p>
+      </li>
+    </ul>
+</div>

@@ -1,0 +1,7 @@
+<app-navbar>
+	<i class="iconfont icon-category" (click)="handleClick()"></i>
+</app-navbar>
+<app-sidebar [isShow]="sideShow" (event)="sideShow=$ev"></app-sidebar>
+<section>
+	<router-outlet></router-outlet>
+</section>

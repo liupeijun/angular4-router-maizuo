@@ -1,0 +1,17 @@
+.filmheader{
+	ul{
+		display: flex;
+		height: 40px;
+		line-height: 40px;
+		/*color:white;*/
+		background: white;
+		li{
+			flex:1;
+			text-align: center;
+		}
+	}
+}
+
+.active{
+	background: #fe6e00;
+}

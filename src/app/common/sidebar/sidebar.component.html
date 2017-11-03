@@ -1,0 +1,8 @@
+<aside  [@sidebar]="state">
+	<!-- @符号后的sidebar 与定义动画文件的中写的trigger 的名字保持一致 -->
+	<ul (click)="handleClick()">
+		<li routerLink="/home" routerLinkActive="active">首页</li>
+		<li routerLink="/film" routerLinkActive="active">电影</li>
+		<li routerLink="/card" routerLinkActive="active">卖座卡</li>
+	</ul>
+</aside>

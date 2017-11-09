@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 
 @Component({
   selector: 'app-film',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject("messageService") private message) { 
+      
+  }
 
   ngOnInit() {
+      this.message.sendMessage("卖座电影");
   }
 
 }

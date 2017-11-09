@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 }) 
 export class NavBarComponent implements OnInit {
-
-  constructor() { }
+  subscription : Subscription;
+  title : String =  "卖座电影";
+  constructor( @Inject("messageService") private message ) { 
+    //注册
+    this.subscription = this.message.getObserver()
+    .subscribe(message => { this.title = message.text });
+  }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy() {
+    //取消注册
+    this.subscription.unsubscribe();
   }
 
 }

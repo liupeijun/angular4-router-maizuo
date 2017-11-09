@@ -7,7 +7,7 @@ import { Component, OnInit, Inject} from '@angular/core';
 export class HomeComponent implements OnInit {
 
   //httpservice 已经在根模块定义， 在这里可以依赖注入了，此时httpservice开始实例化
-  constructor(@Inject('httpService') private http) { }
+  constructor(@Inject('httpService') private http, @Inject("log") private log) { }
 
   looplist:Array<any> = [];
   datalist:Array<any> = [];
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   	})
 
     this.http.get("/film/now-playing?__t=1509691007757&page=1&count=5").then(result=>{
-      console.log(result);
+      this.log.i(result);
       this.datalist = result.data.films;
     })
   }

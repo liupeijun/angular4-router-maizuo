@@ -15,11 +15,15 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SideBarComponent } from './common/sidebar/sidebar.component';
 import { NavBarComponent } from './common/navbar/navbar.component';
 import {HttpService} from "./service/http.service";
+import { MessageService } from "./service/message.service";
+
+import {LogService, LogFactory} from "./service/log.service";
 import { NowplayingComponent } from './film/nowplaying/nowplaying.component';
 import { ComingsoonComponent } from './film/comingsoon/comingsoon.component';
 import { DetailComponent } from './detail/detail.component';
 
 import {Routing} from "./app.router";
+
 
 @NgModule({ 
   declarations: [
@@ -42,8 +46,8 @@ import {Routing} from "./app.router";
     BrowserAnimationsModule, // 动画的模块引入  
     SwiperModule //轮播导入，这样才可以使用swiper组件
   ], 
-  providers: [{provide: 'httpService',  useClass: HttpService}], 
+  providers: [HttpService,{provide: 'messageService',  useClass: MessageService},{provide: 'httpService',  useClass: HttpService}, {provide:"log", useFactory:LogFactory}], 
   ////把提供商添加到根模块上，以便在任何地方都使用服务的同一个实例。
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }
